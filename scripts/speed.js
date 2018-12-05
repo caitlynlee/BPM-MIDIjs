@@ -10,7 +10,7 @@ const DELAYS = [3, 1, 4, 4, 4, 8,
 const BPM_LOWER_BOUND = 30
 const BPM_UPPER_BOUND = 300
 
-var bpm = 165
+var bpm = (BPM_LOWER_BOUND + BPM_UPPER_BOUND)/2
 
 /* If using slider, uncomment
 var sliderRate = document.getElementById("rate");
@@ -47,9 +47,6 @@ function play()
 {
   if (noteCounter < 26){
     on = true;
-    //noteDur_MILLISECONDS = delay[noteCounter]*-1*factor;
-    //noteDur_SECONDS = noteDur_MILLISECONDS/1000
-
     noteDur_SECONDS = DELAYS[noteCounter]* (15/bpm)
     noteDur_MILLISECONDS = noteDur_SECONDS * 1000
 
