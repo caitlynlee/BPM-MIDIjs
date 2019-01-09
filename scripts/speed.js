@@ -10,8 +10,8 @@ const DELAYS = [3, 1, 4, 4, 4, 8,
 const BPM_LOWER_BOUND = 30
 const BPM_UPPER_BOUND = 300
 
-var bpm = (BPM_LOWER_BOUND + BPM_UPPER_BOUND)/2
-
+//var bpm = (BPM_LOWER_BOUND + BPM_UPPER_BOUND)/2
+var bpm = Math.floor(Math.random() * (BPM_UPPER_BOUND - BPM_LOWER_BOUND) + BPM_LOWER_BOUND);
 /* If using slider, uncomment
 var sliderRate = document.getElementById("rate");
 sliderRate.oninput = function() {
