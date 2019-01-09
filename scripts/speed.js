@@ -99,6 +99,7 @@ function submit(){
   for (var i = 0; i < 5; i++)
     text += possible.charAt(Math.floor(Math.random() * possible.length));
 
-  console.log(text);
-  return text;
+  //console.log(text);
+  document.getElementById("code").innerHTML = text;
+  document.getElementById("submit").style.display = "block";
 }
