@@ -10,6 +10,8 @@ const DELAYS = [3, 1, 4, 4, 4, 8,
 const BPM_LOWER_BOUND = 30
 const BPM_UPPER_BOUND = 300
 
+//need 55 random codes
+
 //var bpm = (BPM_LOWER_BOUND + BPM_UPPER_BOUND)/2
 var bpm = Math.floor(Math.random() * (BPM_UPPER_BOUND - BPM_LOWER_BOUND) + BPM_LOWER_BOUND);
 /* If using slider, uncomment
@@ -88,5 +90,15 @@ function checkBounds(){
 }
 
 function submit(){
-  console.log("BPM: " + bpm)
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 5; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  text += ("0000" + bpm).slice(-3)
+  for (var i = 0; i < 5; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  console.log(text);
+  return text;
 }
